@@ -2,15 +2,9 @@
 
 [n8n](https://github.com/n8n-io/n8n) is an extendable workflow automation tool.
 
-[![Artifact HUB](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/n8n)](https://artifacthub.io/packages/helm/open-8gears/n8n)
-
-The Helm chart source code location
-is [github.com/8gears/n8n-helm-chart](https://github.com/8gears/n8n-helm-chart)
-
-
-> [!IMPORTANT]
-> Starting Jan 2024, we serve Charts only as OCI artifacts. 
-
+> [!NOTE]
+> This chart is forked from [github.com/8gears/n8n-helm-chart](https://github.com/8gears/n8n-helm-chart)
+> 
 
 ## Requirements
 
@@ -42,7 +36,12 @@ There is no restriction, mix and match as you like.
 Install chart
 
 ```shell
-helm install my-n8n oci://8gears.container-registry.com/library/n8n --version 0.20.0
+# adde repo with
+helm repo add n8n https://riatlas.github.io/chart__n8n
+helm repo update n8n
+
+# install with
+helm install my-n8n n8n/n8n
 ```
 
 # N8N Specific Config Section
@@ -353,11 +352,5 @@ which only process the webhooks.
 If you set `scaling.webhook.enabled=true`, then webhook processing on the main
 instance is disabled and by default a single webhook instance is started.
 
-## Chart Deployment
 
-```shell
-helm package .
-helm registry login -u $USER 8gears.container-registry.com
-helm push n8n-0.20.1.tgz oci://8gears.container-registry.com/library/n8n
-```
 
