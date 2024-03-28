@@ -9,7 +9,7 @@
 # when the hash of the last commit in the branch you set up changes. This does
 # NOT apply to ownership claim operations, which are processed immediately.
 #
-repositoryID: b37cafa3-373b-42f7-8020-7a577030f0cd
+repositoryID: 9c69ea03-271a-4ceb-b4e9-72f8becfd2b9
 owners:
-  - name: vad1mo
-    email: vad1mo@8gears.com
+  - name: riatlas
+    email: roberto.iannone@riatlas.it
